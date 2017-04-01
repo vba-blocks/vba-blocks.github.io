@@ -29,7 +29,7 @@ WebResponse = "src/WebResponse.cls"
 SpecAuthenticator = "specs/SpecAuthenticator.cls"
 Specs_DigestAuthenticator = "specs/Specs_DigestAuthenticator.bas"
 Specs_GoogleAuthenticator = "specs/Specs_GoogleAuthenticator.bas"
-...
+# ...
 
 [features]
 default = ["embed-dictionary", "json"]
@@ -39,7 +39,7 @@ embed-dictionary = ["VBA-Dictionary/embed"]
 scripting-dictionary = ["VBA-Dictionary/scripting"]
 
 json = { dependencies = ["VBA-JSON"] }
-auto-proxy {}
+auto-proxy = {}
 async = {}
 utf8 = {}
 
