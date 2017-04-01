@@ -105,9 +105,11 @@ VBA-Blocks section in the Ribbon's Developer tab:
 
 - Install - Install dependencies and dev-dependencies
 - Check for updates
+- Add Dependency
+- Remove Dependency
+- Initialize - Initialize vba-block.toml
 - Import - Import files based on src and dev-src
 - Export - Export files based on src and dev-src
-- Init - Initialize vba-block.toml
 - Update - Update src and dev-src based on current
 
 ## CLI
