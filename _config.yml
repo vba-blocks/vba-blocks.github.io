@@ -1,0 +1,36 @@
+repository: vba-blocks/vba-blocks.github.io
+
+defaults:
+- scope:
+    path: ""
+  values:
+    layout: default
+
+permalink: pretty
+
+exclude:
+- Gemfile
+- Gemfile.lock
+- README.md
+- CNAME
+
+sass:
+  style: :compressed
+  sass_dir: _css
+
+# Default github-pages configuration
+kramdown:
+  input: GFM
+  hard_wrap: false
+gems:
+  - jekyll-coffeescript
+  - jekyll-paginate
+
+# Unchangable github-pages configuration
+lsi: false
+safe: true
+highlighter: rouge
+gist:
+  noscript: false
+kramdown:
+  math_engine: mathjax
