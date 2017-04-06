@@ -67,11 +67,12 @@ C = "C.frm"
 dictionary = "1.4.1"
 ```
 
-For Windows-only usage, remove the default `"embed"` feature flag and use `"scripting"`:
+You can include features with dependencies by using the following expanded format:
 
 ```toml
 # ...
 
+# (remove the default "embed" feature and include "scripting")
 dictionary = {
   version = "1.4.1"
   default-features = false
@@ -122,9 +123,9 @@ tdd = {
 
 ## Add-in
 
-Dependencies: Install, add, update, and remove
-Source: Import and export
-Manifest: Initialize and update (with up-to-date source info)
+- Dependencies: Install, add, update, and remove
+- Source: Import and export
+- Manifest: Initialize and update (with up-to-date source info)
 
 ## CLI
 
