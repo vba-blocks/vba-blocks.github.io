@@ -39,12 +39,10 @@ scripting = { references = ["Scripting"] }
 [dependencies]
 # (none)
 
-[references]
-Scripting = {
-  version = "1.0"
-  guid = "{420B2830-E718-11CF-893D-00A0C9054228}"
-  optional = true
-}
+[references.Scripting]
+version = "1.0"
+guid = "{420B2830-E718-11CF-893D-00A0C9054228}"
+optional = true
 ```
 
 An example of using the `dictionary` package in your project:
@@ -73,11 +71,10 @@ You can include features with dependencies by using the following expanded forma
 # ...
 
 # (remove the default "embed" feature and include "scripting")
-dictionary = {
-  version = "1.4.1"
-  default-features = false
-  features = ["scripting"]
-}
+[dependencies.dictionary]
+version = "1.4.1"
+default-features = false
+features = ["scripting"]
 ```
 
 An example of a more in-depth package:
@@ -104,21 +101,11 @@ embed-dictionary = { dependencies = ["dictionary/embed"] }
 scripting-dictionary = { dependencies = ["dictionary/scripting"] }
 
 [dependencies]
-dictionary = {
-  version = "1.4.1"
-  default-features = false
-}
-json = {
-  version = "2.2.0"
-  default-features = false
-  optional = true
-}
+dictionary = { version = "1.4.1", default-features = false }
+json = { version = "2.2.0", default-features = false, optional = true }
 
 [dev-dependencies]
-tdd = {
-  version = "2.0.0-beta"
-  features = ["workbook"]
-}
+tdd = { version = "2.0.0-beta", features = ["workbook"] }
 ```
 
 ## Add-in
