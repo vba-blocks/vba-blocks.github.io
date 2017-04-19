@@ -77,56 +77,32 @@ default-features = false
 features = ["scripting"]
 ```
 
-An example of a more in-depth package:
-
-```toml
-[package]
-name = "web"
-version = "4.2.1"
-author = ["Tim Hall <tim.hall.engr@gmail.com>"]
-
-[src]
-WebHelpers = "src/WebHelpers.bas"
-WebClient = "src/WebClient.cls"
-WebRequest = "src/WebRequest.cls"
-WebResponse = "src/WebResponse.cls"
-
-[features]
-default = ["json", "embed-dictionary"]
-
-json = { dependencies = ["json"] }
-
-# re-export feature flags from dictionary
-embed-dictionary = { dependencies = ["dictionary/embed"] }
-scripting-dictionary = { dependencies = ["dictionary/scripting"] }
-
-[dependencies]
-dictionary = { version = "1.4.1", default-features = false }
-json = { version = "2.2.0", default-features = false, optional = true }
-
-[dev-dependencies]
-tdd = { version = "2.0.0-beta", features = ["workbook"] }
-```
+For more details, see the [Manifest Format]({{baseurl}}/manifest/)
 
 ## Add-in
 
-- Dependencies: Install, add, update, and remove
-- Source: Import and export
-- Manifest: Initialize and update (with up-to-date source info)
+Add-ins for working with vba-blocks from Office.
+
+- Dependencies: Add, remove, and update
+- Source: Export on save and test
 
 ## CLI
 
-```bash
-vba-blocks --help
-
+```txt
 Usage: vba-blocks [options]
                   <cmd> [args]
 
 Commands:
 
-  init      Initialize block
+  add       Add a block
+  remove    Remove block(s)
+  update    Update block(s) or all blocks
+  build     Build project from dependencies and src
+  test      Run project tests
+  new       Create a new vba-blocks project
+  init      Start a new vba-blocks project in the current directory
   version   Update block version
-  publish   Publish block
+  publish   Publish block to vba-blocks
 
 Options:
 
@@ -134,4 +110,4 @@ Options:
   -V, --version
 ```
 
-Follow along on [GitHub](https://github.com/vba-blocks/vba-blocks.github.io)
+Follow along on [GitHub](https://github.com/vba-blocks/vba-blocks)
