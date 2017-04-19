@@ -25,7 +25,7 @@ For reference, here's what the `vba-block.toml` would look like for a relatively
 [package]
 name = "dictionary"
 version = "1.4.1"
-author = ["Tim Hall <tim.hall.engr@gmail.com>"]
+authors = ["Tim Hall <tim.hall.engr@gmail.com>"]
 
 [src]
 Dictionary = { path = "Dictionary.cls", optional = true }
@@ -51,7 +51,7 @@ An example of using the `dictionary` package in your project:
 [package]
 name = "My Project"
 version = "0.0.0"
-author = ["tim.hall.engr@gmail.com"]
+authors = ["tim.hall.engr@gmail.com"]
 
 # Explicitly prevent publishing of project / package
 publish = false
