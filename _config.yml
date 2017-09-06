@@ -6,7 +6,7 @@ defaults:
   values:
     layout: default
 
-permalink: pretty
+permalink: blog/:year/:title/
 
 exclude:
 - Gemfile

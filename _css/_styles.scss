@@ -1,0 +1,25 @@
+.container {
+  position: relative;
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.footer {
+  text-align: center;
+  padding: 1.2em 0;
+  color: darken(#b2b2b2, 20%);
+}
+
+@media only screen and (max-width: 720px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .container {
+    width: 720px;
+  }
+}
