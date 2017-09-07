@@ -35,7 +35,7 @@ section {
 }
 
 body {
-  margin: 4px 0 0 0;
+  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol';
@@ -44,9 +44,7 @@ body {
   line-height: 1.5;
   text-align: left;
   overflow-y: scroll;
-  min-height: calc(100vh - 4px);
   color: $color-text;
-  background-color: $color-page;
 }
 
 [tabindex='-1']:focus {
