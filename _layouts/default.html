@@ -3,8 +3,8 @@ layout: blank
 ---
 <div class="max-width-3 mx-auto bg-white p1">
   <header class="mb2">
-    <h1 class="inline-block my0"><a class="header-link header-logo pb0" href="{{ site.url }}/">vba-blocks</a></h1>
-    <nav class="list-reset header-nav">
+    <h1 class="inline-block my0 mr2"><a class="header-link header-logo pb0" href="{{ site.url }}/">vba-blocks</a></h1>
+    <nav class="list-reset align-text-bottom header-nav">
       {% for link in site.navigation %}
         {% capture href %}
           {% if link.external %}{{ link.external }}{% else %}{{ site.url }}{{ link.url }}{% endif %}
@@ -13,7 +13,7 @@ layout: blank
           {% if page.url contains link.url %} is-active{% endif %}
         {% endcapture %}
 
-        <li class="inline-block ml1">
+        <li class="inline-block mr1">
           <a class="header-link{{active}}" href="{{ href }}">{{ link.text }}</a>
         </li>
       {% endfor %}
@@ -24,7 +24,7 @@ layout: blank
   <article>
     {{ content }}
   </article>
-  <footer class="py2 text-align-center faded">
+  <footer class="py2 center faded">
     &copy; 2017 vba-blocks
   </footer>
 </div>

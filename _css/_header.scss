@@ -1,12 +1,17 @@
 .header-link {
   padding-bottom: 0.2rem;
   color: $color-text;
-  border-color: $color-text;
-  border-color: rgba($color-text, 0.3);
   border-bottom-style: none;
 
+  &:hover {
+    color: $color-link;
+  }
   &.is-active {
     border-bottom: solid 1px lighten($color-text, 50%);
+
+    &:hover {
+      border-bottom-color: lighten($color-link, 40%);
+    }
   }
 }
 
@@ -16,14 +21,8 @@
   }
 }
 
-.header-nav {
-  margin-left: -0.5rem;
-  vertical-align: text-bottom;
-}
-
 @media only screen and (min-width: 800px) {
   .header-nav {
     display: inline-block;
-    margin-left: 1rem;
   }
 }
