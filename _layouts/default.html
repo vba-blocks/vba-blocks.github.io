@@ -1,12 +1,30 @@
 ---
 layout: blank
 ---
-<header class="container">
+<div class="max-width-3 mx-auto bg-white p1">
+  <header class="mb2">
+    <h1 class="inline-block my0"><a class="header-link header-logo pb0" href="{{ site.url }}/">vba-blocks</a></h1>
+    <nav class="list-reset header-nav">
+      {% for link in site.navigation %}
+        {% capture href %}
+          {% if link.external %}{{ link.external }}{% else %}{{ site.url }}{{ link.url }}{% endif %}
+        {% endcapture %}
+        {% capture active %}
+          {% if page.url contains link.url %} is-active{% endif %}
+        {% endcapture %}
 
-</header>
-<article class="container">
-  {{ content }}
-</article>
-<footer class="footer container">
-  &copy; 2017 vba-blocks
-</footer>
+        <li class="inline-block ml1">
+          <a class="header-link{{active}}" href="{{ href }}">{{ link.text }}</a>
+        </li>
+      {% endfor %}
+      
+      <!-- <li class="inline-block pl1"><a class="header-link" href="https://github.com/vba-blocks/vba-blocks">Github</a></li> -->
+    </nav>
+  </header>
+  <article>
+    {{ content }}
+  </article>
+  <footer class="py2 text-align-center faded">
+    &copy; 2017 vba-blocks
+  </footer>
+</div>

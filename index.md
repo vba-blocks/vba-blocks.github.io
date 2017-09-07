@@ -3,8 +3,6 @@ layout: default
 title: vba-blocks
 ---
 
-# vba-blocks
-
 _Coming soon: A package manager for VBA_
 
 Based heavily on the design of the much-lauded package manager for Rust, [Cargo](https://crates.io/),

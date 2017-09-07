@@ -4,7 +4,18 @@ defaults:
 - scope:
     path: ""
   values:
-    layout: default
+    layout: "default"
+- scope:
+    path: ""
+    type: "posts"
+  values:
+    layout: "post"
+
+navigation:
+- text: Blog
+  url: /blog/
+- text: Github
+  external: https://github.com/vba-blocks/vba-blocks
 
 permalink: blog/:year/:title/
 

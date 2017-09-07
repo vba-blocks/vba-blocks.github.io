@@ -13,7 +13,7 @@ html {
   -webkit-tap-highlight-color: transparent;
   -webkit-font-smoothing: antialiased;
 
-  background-color: $color-background;
+  background-color: $color-highlight;
 }
 
 @-ms-viewport {
@@ -42,9 +42,12 @@ body {
   font-size: 1rem;
   font-weight: normal;
   line-height: 1.5;
-  color: #212529;
   text-align: left;
   overflow-y: scroll;
+  min-height: 100vh;
+  color: $color-text;
+  background-color: $color-page;
+  border-top: solid 4px $color-highlight;
 }
 
 [tabindex='-1']:focus {
@@ -124,3 +127,11 @@ pre {
     font-size: 0.95em;
   }
 }
+
+//
+// Utilities
+//
+
+.faded { color: #7f7f7f; }
+.bg-white { background-color: #fff; }
+.text-align-center { text-align: center; }
