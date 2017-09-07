@@ -1,4 +1,15 @@
 ---
 layout: default
 ---
-{{ content }}
+<article>
+  <h2 class="mb0">{{ page.title }}</h2>
+  <p class="faded">
+    {% if page.author %}{{ page.author }}{% else %}Tim Hall{% endif %} /
+    {{ page.date | date: "%b %-d, %Y" }}
+    {% for tag in page.tags %}
+      / <!--<a href="{{ site.url }}/blog?tag={{ tag }}">-->{{ tag }}<!--</a>-->
+    {% endfor %}
+  </p>
+
+  {{ content }}
+</article>

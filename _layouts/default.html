@@ -6,24 +6,15 @@ layout: blank
     <h1 class="inline-block my0 mr2"><a class="header-link header-logo pb0" href="{{ site.url }}/">vba-blocks</a></h1>
     <nav class="list-reset align-text-bottom header-nav">
       {% for link in site.navigation %}
-        {% capture href %}
-          {% if link.external %}{{ link.external }}{% else %}{{ site.url }}{{ link.url }}{% endif %}
-        {% endcapture %}
-        {% capture active %}
-          {% if page.url contains link.url %} is-active{% endif %}
-        {% endcapture %}
-
+        {% capture href %}{% if link.external %}{{ link.external }}{% else %}{{ site.url }}{{ link.url }}{% endif %}{% endcapture %}
+        {% capture active %}{% if page.url contains link.url %} is-active{% endif %}{% endcapture %}
         <li class="inline-block mr1">
           <a class="header-link{{active}}" href="{{ href }}">{{ link.text }}</a>
         </li>
       {% endfor %}
-      
-      <!-- <li class="inline-block pl1"><a class="header-link" href="https://github.com/vba-blocks/vba-blocks">Github</a></li> -->
     </nav>
   </header>
-  <article>
-    {{ content }}
-  </article>
+  {{ content }}
   <footer class="py2 center faded">
     &copy; 2017 vba-blocks
   </footer>
