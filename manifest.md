@@ -6,18 +6,24 @@ title: Manifest
 
 The vba-blocks manifest (`vba-block.toml`) serves as the foundation for your project and provides information on your package, source, dependencies, references, and targets, as detailed below.
 
-## `[package]`
+## `[package]` or `[project]`
 
-`[package]` includes general information about your package.
+`[package]` / `[project]` includes general information about your package.
 
 ```toml
 [package]
-name = "my_project"
+name = "my_package"
 version = "0.1.0"
 authors = ["you@example.com"]
 ```
 
-All three of the above fields are mandatory.
+All three of the above fields (name, version, and authors) are mandatory for packages. Packages are designed to be included in other packages/projects, which projects are used for Office documents like Workbooks and have slightly different requirements.
+
+```toml
+[project]
+name = "my_package"
+target = "xlsm"
+```
 
 ### `version`
 
@@ -28,24 +34,15 @@ vba-blocks is built on the concept of [Semantic Versioning](http://semver.org/),
 - After 1.0.0, don’t add any new public API (no new `Public` anything) in tiny versions. Always increment the minor version if you add any new `Public` enums, properties, methods, or anything else.
 - Use version numbers with three numeric parts such as 1.0.0 rather than 1.0.
 
-### `publish` (optional)
+### `target`
 
-The `publish` field can be used to prevent a package from being published to vba-blocks by mistake.
-
-```toml
-[package]
-# ...
-publish = false
-```
-
-### `workspace` (optional)
-
-The `workspace` field can be used to denote that the package is part of a workspace, allowing sharing of src, dependencies, or other information.
+`target` is used to define what application/extension to use when building your project. It can be a string for the extension, in which case `target/` includes the source files for creating the target. Otherwise, `type` and `path` can be used to define a custom target path
 
 ```toml
-[package]
-# ...
-workspace = "path/to/root-workspace"
+target = "xlsm"
+# equivalent to target = { type = "xlsm", path = "target" }
+
+target = { type = "xlam", path = "targets/xlam" }
 ```
 
 ## `[src]`
@@ -54,8 +51,6 @@ workspace = "path/to/root-workspace"
 [src]
 a = "src/a.bas"
 b = "src/b.cls"
-c = "src/c.frm"
-d = { path = "src/d.bas", optional = true }
 ```
 
 ## `[dependencies]`
@@ -63,43 +58,8 @@ d = { path = "src/d.bas", optional = true }
 ```toml
 [dependencies]
 dictionary = "^1"
-json = { version = ">= 1.2, 1.5", optional = true }
+json = { version = ">= 1.2, 1.5" }
 
 [dependencies.utc]
 version = "1.2.3"
-default-features = false
-features = ["rfc3339"]
-optional = true
-```
-
-## `[references]`
-
-```toml
-[references.Scripting]
-version = "1.0"
-guid = "{420B2830-E718-11CF-893D-00A0C9054228}"
-optional = true
-```
-
-## `[features]`
-
-```toml
-[features]
-default = ["embed"]
-
-emded = { src = ["Dictionary"] }
-scripting = { references = ["Scripting"] }
-```
-
-## `[[targets]]`
-
-```toml
-[[targets]]
-type = "xlsm"
-path = "targets/xlsm"
-
-[[targets]]
-type = "xlam"
-name = "my-addin"
-path = "targets/xlam"
 ```

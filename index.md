@@ -3,7 +3,7 @@ layout: default
 title: vba-blocks
 ---
 
-_Coming soon: A package manager for VBA_
+_A package manager for VBA_
 
 Based heavily on the design of the much-lauded package manager for Rust, [Cargo](https://crates.io/),
 vba-blocks aims to make building projects with VBA simple and powerful.
@@ -26,33 +26,16 @@ version = "1.4.1"
 authors = ["Tim Hall <tim.hall.engr@gmail.com>"]
 
 [src]
-Dictionary = { path = "Dictionary.cls", optional = true }
-
-[features]
-default = ["embed"]
-
-embed = { src = ["Dictionary"] }
-scripting = { references = ["Scripting"] }
-
-[dependencies]
-# (none)
-
-[references.Scripting]
-version = "1.0"
-guid = "{420B2830-E718-11CF-893D-00A0C9054228}"
-optional = true
+Dictionary = "Dictionary.cls"
 ```
 
 An example of using the `dictionary` package in your project:
 
 ```toml
-[package]
+[project]
 name = "My Project"
 version = "0.0.0"
 authors = ["tim.hall.engr@gmail.com"]
-
-# Explicitly prevent publishing of project / package
-publish = false
 
 [src]
 A = "A.bas"
@@ -63,49 +46,19 @@ C = "C.frm"
 dictionary = "1.4.1"
 ```
 
-You can include features with dependencies by using the following expanded format:
-
-```toml
-# ...
-
-# (remove the default "embed" feature and include "scripting")
-[dependencies.dictionary]
-version = "1.4.1"
-default-features = false
-features = ["scripting"]
-```
-
 For more details, see the [Manifest Format]({{baseurl}}/manifest/)
-
-## Add-in
-
-Add-ins for working with vba-blocks from Office.
-
-- Dependencies: Add, remove, and update
-- Source: Export on save and test
 
 ## CLI
 
 ```txt
-Usage: vba-blocks [options]
-                  <cmd> [args]
+Usage: vba-blocks [command] [options]
 
 Commands:
-
-  add       Add a block
-  remove    Remove block(s)
-  update    Update block(s) or all blocks
-  build     Build project from dependencies and src
-  test      Run project tests
-  new       Create a new vba-blocks project
-  init      Start a new vba-blocks project in the current directory
-  version   Update block version
-  publish   Publish block to vba-blocks
-
-Options:
-
-  -h, --help
-  -V, --version
+  - new     Create a new project / package in a new directory
+  - init     Initialize a new project / package in the current directory
+  - build    Build project from manifest
+  - export   Export src from built target
+  - run      Run macro in document / add-in
 ```
 
 Follow along on [GitHub](https://github.com/vba-blocks/vba-blocks)
