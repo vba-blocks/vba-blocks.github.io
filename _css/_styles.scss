@@ -29,6 +29,10 @@
   background-repeat: no-repeat;
   background-size: 265px 60px;
   text-indent: -9999px;
+
+  &:hover {
+    border: none;
+  }
 }
 
 @media only screen and (min-width: 800px) {
