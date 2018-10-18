@@ -21,9 +21,14 @@
 }
 
 .header-logo {
-  &:hover {
-    border: none;
-  }
+  position: relative;
+  display: inline-block;
+  width: 265px;
+  height: 60px;
+  background-image: url("vba-blocks.png");
+  background-repeat: no-repeat;
+  background-size: 265px 60px;
+  text-indent: -9999px;
 }
 
 @media only screen and (min-width: 800px) {
