@@ -44,3 +44,107 @@
 .vba-blocks {
   font-weight: 500;
 }
+
+.packages {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 16rem;
+  grid-column-gap: 1em;
+  list-style: none;
+  padding: 0;
+}
+
+.package {
+  display: flex;
+  flex-direction: column;
+  border: solid 1px $color-highlight;
+  padding: 1.5em 1em;
+
+  h2 {
+    margin-top: 0;
+  }
+  p {
+    flex: 1;
+  }
+  a {
+    display: inline-block;
+  }
+
+  &:hover,
+  &:focus-within {
+    background-color: $color-highlight;
+    cursor: pointer;
+
+    a {
+      border-bottom-style: solid;
+    }
+  }
+}
+
+.message {
+  text-align: center;
+  margin-top: 4em;
+  margin-bottom: 2em;
+  padding: 1.5em;
+
+  &.mod-highlight {
+    background-color: #f4fdff;
+    border: solid 1px darken(#f4fdff, 5%);
+  }
+}
+
+.package-header {
+  margin-bottom: 1em;
+
+  h1 {
+    margin-bottom: 0;
+  }
+}
+.package-version {
+  color: #999;
+  font-weight: normal;
+  font-size: 0.9em;
+}
+.package-links {
+  list-style: none;
+  font-size: 0.9em;
+
+  li {
+    display: inline-block;
+    margin-right: 1em;
+  }
+}
+.package-installation {
+  display: flex;
+  line-height: 2.5em;
+  
+  span {
+    padding: 0 1em;
+  }
+  code {
+    flex: 1;
+    background-color: #ddd;
+    padding: 1px 1em;
+    font-size: 1em;
+  }
+}
+.package-detail {
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  padding: 0.2em 0.4em;
+  font-size: 0.8em;
+}
+.package-readme {
+  border-top: solid 1px #ccc;
+  padding-top: 1em;
+  margin-top: 2em;
+
+  a {
+    border: none;
+    text-decoration: underline;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 0.5em;
+  }
+}
