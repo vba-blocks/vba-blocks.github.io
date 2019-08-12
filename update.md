@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Update vba-blocks
+permalink: /update
 ---
 
 # Update vba-blocks
