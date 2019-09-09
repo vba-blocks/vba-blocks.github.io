@@ -15,7 +15,7 @@ vba-blocks consists of three parts:
 
 ## Install
 
-__Windows__
+**Windows**
 
 In powershell, run the following:
 
@@ -23,7 +23,7 @@ In powershell, run the following:
 iwr https://vba-blocks.com/install.ps1 | iex
 ```
 
-__Mac__
+**Mac**
 
 In terminal, run the following:
 
@@ -44,7 +44,6 @@ For more recent versions of Office for Mac, you will need to trust access to the
  </ol>
  <a href="./images/trust-access-VBOM.png">Visual Instructions</a>
 </details>
-
 
 ## vba-block.toml
 
@@ -90,6 +89,7 @@ Commands:
   - new     Create a new project / package in a new directory
   - init     Initialize a new project / package in the current directory
   - build    Build project from manifest
+  - test     Run tests for built target
   - export   Export src from built target
   - run      Run macro in document / add-in
 ```
